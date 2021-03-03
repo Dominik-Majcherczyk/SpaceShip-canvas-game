@@ -60,12 +60,12 @@ function init() {
   ship = new Ship(undefined, undefined, 30, 30, "black");
 }
 
-// Animation Loop
+// Animation loop
 function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, canvas.width, canvas.height);
 
-  //generating random enemies
+  //Generating random enemies
   ticker++;
   if (ticker % randomSpawnRate == 0) {
     let x = circleRandomPosition("x");
@@ -83,7 +83,7 @@ function animate() {
     randomSpawnRate = randomIntFromRange(100, 200);
   }
 
-  //update function for animate enemies and shards
+  //Update function for animate enemies and shards
   enemies.forEach((enemy) => {
     enemy.shards.forEach((shard, index) => {
       shard.update();
